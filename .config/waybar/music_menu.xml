@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="play">
+        <property name="label">Play</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="sep1"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="pause">
+        <property name="label">Pause</property>
+      </object>
+    </child>
+  </object>
+</interface>
+

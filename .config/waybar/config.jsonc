@@ -1,0 +1,34 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "height": 40,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "modules-left": [
+    "custom/fedora_icon",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "custom/zeit",
+    "custom/padding",
+    "backlight",
+    "custom/padding",
+    "custom/media_player",
+    "custom/padding",
+    "pulseaudio",
+    "custom/padding",
+    "network",
+    "custom/padding",
+    "battery",
+    "custom/padding",
+    "custom/power",
+    "custom/padding",
+    "clock",
+  ],
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
+}

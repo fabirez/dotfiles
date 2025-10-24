@@ -1,0 +1,78 @@
+@define-color bg-white #ffffff;
+@define-color bg-black #24292e;
+@define-color bg-gray #636b74;
+@define-color bg-azure #9ecbff;
+@define-color bg-red-accent #fd9680;
+@define-color bg-red #f77685;
+@define-color bg-yellow-accent #e6fd80;
+@define-color bg-orange-accent #faaa75;
+@define-color bg-purple #b392f0;
+@define-color bg-blue #79bfff;
+
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 400;
+}
+
+.modules-right {
+  padding-right: 0.75rem;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.9);
+  margin-top: 8px;
+}
+
+tooltip {
+  background: @bg-gray;
+  color: @bg-black;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+#custom-padding {
+  min-width: 24px;
+}
+
+#custom-fedora_icon {
+  font-size: 2rem;
+  color: @bg-blue;
+  padding-right: 2rem;
+  padding-left: 0.75rem;
+}
+
+#workspaces {
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 0px 24px 24px 0px;
+}
+
+#workspaces button {
+  font-size: 16px;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  min-width: 32px;
+  color: @bg-gray;
+  /* transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+  opacity: 0.9;
+}
+
+#workspaces button.active {
+  color: @bg-azure;
+  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  opacity: 0.95;
+}
+
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#clock,
+#custom-power,
+#custom-media_player,
+#custom-zeit {
+  font-size: 18px;
+  color: @bg-gray;
+}

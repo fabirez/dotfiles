@@ -1,0 +1,11 @@
+[window]
+padding={x=4,y=4}
+opacity=1
+blur=true
+
+[font]
+size=10
+normal={family='Monaspace Neon NF', style='regular'}
+
+[mouse]
+hide_when_typing=true
