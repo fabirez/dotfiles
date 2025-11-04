@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+SESSION_NAME=$1
+
+if [ -z "$SESSION_NAME" ]; then
+    SESSION_NAME=$(pwd | grep -Po '(?<=code\/).*\/\K(.*)')
+
+    if [ -z "$SESSION_NAME" ]; then
+        SESSION_NAME=$(pwd | grep -Po '(?<=code\/).*')
+    fi
+fi
+
+
+tmux setenv SESSION "$SESSION_NAME"
+
+tmux new-session -d -s "$SESSION_NAME"
+
+tmux new-window -t "$SESSION_NAME:9"
+tmux new-window -t "$SESSION_NAME:8"
+tmux new-window -t "$SESSION_NAME:7"
+
+tmux send-keys -t "${SESSION_NAME}:9" "npm run dev" C-m
+
+tmux attach-session -t "$SESSION_NAME:1"

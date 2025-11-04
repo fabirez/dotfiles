@@ -9,3 +9,8 @@ normal={family='Monaspace Neon NF', style='regular'}
 
 [mouse]
 hide_when_typing=true
+
+# [colors]
+# [colors.primary]
+# background="#cccccc"
+

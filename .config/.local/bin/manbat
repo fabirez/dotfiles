@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+COMMAND=$1
+function manbat(){
+  man "$COMMAND" | bat --language=man
+}
+manbat

@@ -169,12 +169,14 @@ return {
             html = {},
             jsonls = {},
             tailwindcss = {},
-            ts_ls = {},
+            -- ts_ls = {},
             yamlls = {},
             emmet_ls = {},
             astro_language_server = {},
             pyright = {},
             gopls = {},
+            bashls = {},
+
             lua_ls = {
                 -- cmd = {...},
                 -- filetypes = { ...},
