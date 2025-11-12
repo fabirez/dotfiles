@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PATH_IMAGES="$HOME/Scaricati/images/"
+IMAGE=$(fzf --walker-root "$PATH_IMAGES" --preview 'chafa {}' --preview-window up,80,border-horizontal  --bind 'ctrl-f:change-preview-window(80%|50%)' )
+
+# Set the image with hyprpaper
+hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
+
+### Example from the manual:
+#fzf --height 40% --layout reverse --info inline --border \
+#    --preview 'file {}' --preview-window up,1,border-horizontal \
+#    --bind 'ctrl-/:change-preview-window(50%|hidden|)' \
+#    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'
+

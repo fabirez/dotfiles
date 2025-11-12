@@ -219,7 +219,7 @@ return {
                 styles = {
                     bold = false,
                     italic = false,
-                    transparency = false,
+                    transparency = true,
                 },
 
                 groups = {
@@ -267,13 +267,13 @@ return {
                         ---d7ffa5 yellow
                         ---F06080 red-light
                         ---d1d4c7 gray
-                        ---
                         pine = '#b392f0', -- main keywords (function, return, if else....)
-                        foam = '#F06080', -- variables (parameter, arguments, nested methods) x2
+                        foam = '#ff4a6b', -- variables (parameter, arguments, nested methods) x2
                         gold = '#b3e8b4', -- strings x2
                         text = '#9ecbff', --strings and number of columns:selected
                         rose = '#9ccfd8', -- keywords (boolean) and nested function
-                        iris = '#d1d4c7', -- Special Comments  ( NOTE:)
+                        iris = '#00ffd2', -- Special Comments  ( NOTE:)
+                        -- base = '#24292e', --bg
                         base = '#24292e', --bg
                         subtle = '#636b74', --comments,brackets, operators
                         --- Secondary ?
@@ -322,47 +322,3 @@ return {
         end,
     },
 }
-
---local M = {}
---
---function M.set_highlights()
---    vim.o.termguicolors = true
---
---    local colors = {
---        bg_white = '#ffffff',
---        bg_black = '#1A1A1A',
---        bg_gray = '#808080',
---        bg_red_accent = '#fd9680',
---        bg_yellow_accent = '#e6fd80',
---        bg_green_accent = '#00dfba',
---        bg_azure = '#9ecbff',
---        bg_purple = '#A19EFF',
---    }
---
---    local groups = {
---        Normal = { fg = colors.bg_white, bg = colors.bg_black },
---        Comment = { fg = colors.bg_gray },
---        String = { fg = colors.bg_red_accent },
---        Function = { fg = colors.bg_azure },
---        Identifier = { fg = colors.bg_white },
---        Statement = { fg = colors.bg_yellow_accent },
---        Special = { fg = colors.bg_purple },
---    }
---
---    vim.o.background = 'dark'
---    if vim.g.colors_name then
---        vim.cmd 'highlight clear'
---    end
---    vim.g.colors_name = 'mytheme'
---    if vim.fn.exists 'syntax_on' == 1 then
---        vim.cmd 'syntax reset'
---    end
---
---    for group, opts in pairs(groups) do
---        vim.api.nvim_set_hl(0, group, opts)
---    end
---end
---
---return M
---#regio
---

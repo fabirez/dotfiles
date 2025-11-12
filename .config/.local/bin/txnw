@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
+source "$DOT/.local/bin/log"
+
 SESSION_NAME=$1
 
 if [ -z "$SESSION_NAME" ]; then
-    SESSION_NAME=$(pwd | grep -Po '(?<=code\/).*\/\K(.*)')
-
-    if [ -z "$SESSION_NAME" ]; then
-        SESSION_NAME=$(pwd | grep -Po '(?<=code\/).*')
-    fi
+    SESSION_NAME=$(pwd | rg '.*/(.*)' -or '$1')
+  if [ -z "$SESSION_NAME" ]; then
+      error "Can't take the name of the session automatically, please specify it."
+  fi
 fi
 
 
@@ -15,10 +16,19 @@ tmux setenv SESSION "$SESSION_NAME"
 
 tmux new-session -d -s "$SESSION_NAME"
 
-tmux new-window -t "$SESSION_NAME:9"
-tmux new-window -t "$SESSION_NAME:8"
-tmux new-window -t "$SESSION_NAME:7"
+# -P : print
+# -F : what we want to print from the "#{...}" int his case only session_name see man tmux #ORAMTS
+# -s : session name
+# Tmux change some characted sometimes,  
+# e.x hello.world -> hello_world
 
-tmux send-keys -t "${SESSION_NAME}:9" "npm run dev" C-m
+# Here we just take the name of the session, that tmux give.
+TMUX_SESSION_NAME=$(tmux new-session -d -P -F "#{session_name}" -s "$SESSION_NAME")
 
-tmux attach-session -t "$SESSION_NAME:1"
+tmux new-window -t "$TMUX_SESSION_NAME:9"
+tmux new-window -t "$TMUX_SESSION_NAME:8"
+tmux new-window -t "$TMUX_SESSION_NAME:7"
+
+tmux send-keys -t "${TMUX_SESSION_NAME}:9" "npm run dev" C-m
+
+tmux attach-session -t "$TMUX_SESSION_NAME:1"
