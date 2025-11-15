@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOC=$1
+FILENAME=$2 
+PATH_DOCS="$HOME/docs/$DOC" 
+
+cat "$PATH_DOCS/$FILENAME" 

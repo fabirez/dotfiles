@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$DOT/.local/bin/log"
+
+
+CHOOSED_DOC=$1
+echo  "You choosed: $CHOOSED_DOC"
+
+# CHOOSED_DOC cat alldocs | fzf ..
+
+
+# If the input for the doc is empty 
+if [[ $CHOOSED_DOC = "" ]];then
+	error "You dind't put any doc"
+fi
+
+
+# Check if we arleady have the doc
+if [[ -d  "$HOME/docs/$CHOOSED_DOC" ]];then
+	warning " If you want to update it please remove the folder in $HOME/docs/$CHOOSED_DOC"
+	info "Removing the folder $CHOOSED_DOC"
+	rm -rf  "$HOME/docs/$CHOOSED_DOC"
+fi
+
+
+
+# TODO: Understand how to replace this two if...
+#
+# Download the choosed doc
+
+if [[ $CHOOSED_DOC =~ 'bash' ]]; then
+			info "Downloading... $CHOOSED_DOC"
+
+			cd "$HOME/docs" \
+			&& mkdir bash && cd bash \
+			&& curl https://www.gnu.org/software/bash/manual/bash.html_node.tar.gz | \
+			   tar --extract --gzip
+fi
+
+
+if [[ $CHOOSED_DOC =~ 'python' ]]; then
+			info "Downloading... $CHOOSED_DOC"
+
+				cd "$HOME/docs" \
+				&& mkdir python && cd python \
+				&& curl -O -w '%{filename_effective}' https://docs.python.org/3.14/archives/python-3.14-docs-html.zip | xargs unzip
+
+fi
+
+success "Your $CHOOSED_DOC doc is ready!"

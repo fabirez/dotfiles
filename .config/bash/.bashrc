@@ -63,12 +63,16 @@ alias ls='eza -a --tree --level=1 --icons=always'
 
 # alias txnw="sh ~/code/shellScripting/tmux9.sh $1"
 alias man="$DOT/.local/bin/manbat $1"
+alias installdoc="$DOT/.local/bin/docs/installdocs $1"
 alias ctw="$DOT/.local/bin/change_wallpaper"
 alias zeit="$HOME/temp/zeit/zeit"
 alias eww="~/eww/target/release/eww"
 
 # Use syntax highlight for `cat`:
-alias cat='bat --paging never --decorations never --plain'
+# -pp alias for '--style=plain --paging=never'
+alias cat='bat -pp'
+
+alias h="cat $HOME/.bash_history | fzf | sh"
 
 
 eval "$(starship init bash)"

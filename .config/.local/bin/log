@@ -2,11 +2,11 @@
 
 Color_Reset='\e[0m'
 
-Black_on_Green='\e[1;30;42m'
+# Black_on_Green='\e[1;30;42m'
 Black_on_Yellow='\e[1;30;43m'
 
 # Background
-Red_bg='\e[41m'
+# Red_bg='\e[41m'
 
 # Bold
 Green_600='\e[1;32m'
@@ -14,7 +14,7 @@ Red_600='\e[1;31m'
 Yellow_600='\e[1;33m'
 
 function error(){
-    echo -e "${Red_bg}Error${Color_Reset} ${Red_600}$* ${Color_Reset}" >&2
+    echo -e "${Red_600}Error${Color_Reset} ${Red_600}$* ${Color_Reset}" >&2
     exit 1;
 }
 
@@ -28,6 +28,5 @@ function warning() {
 
 
 function success() {
-    echo -e "${Black_on_Green}Success${Color_Reset} ${Green_600}$* ${Color_Reset}"
-
+    echo -e "${Green_600}Success${Color_Reset} ${Green_600}$* ${Color_Reset}"
 }

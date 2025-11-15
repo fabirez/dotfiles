@@ -2,6 +2,10 @@
 
 COMMAND=$1
 function manbat(){
-  man "$COMMAND" | bat --language=man
+	# :h nobuflisted (don't put it in the buflist)
+	# :h nofile	 will not be written
+	# Only beacuse you can quit without using "!"
+  man "$COMMAND" | bat --language=man | nvim +"setlocal nobuflisted" +"setlocal buftype=nofile" 
 }
 manbat
+

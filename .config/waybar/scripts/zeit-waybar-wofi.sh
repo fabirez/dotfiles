@@ -39,4 +39,4 @@ if [[ "$1" == "click" ]]; then
     exit 0
 fi
 
-echo -n $tracking
+echo -n "$tracking"

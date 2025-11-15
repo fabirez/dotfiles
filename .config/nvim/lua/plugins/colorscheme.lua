@@ -6,7 +6,6 @@ return {
         opts = {
             term_colors = true,
             transparent_background = true,
-            -- transparent_background = false,
             dim_inactive = {
                 enabled = false, -- dims the background color of inactive window
                 shade = 'dark',
@@ -56,7 +55,7 @@ return {
     {
         'scottmckendry/cyberdream.nvim',
         lazy = false,
-        priority = 1000,
+				priority = 1000,
         config = function()
             require('cyberdream').setup {
                 -- Recommended - see "Configuring" below for more config options
@@ -259,7 +258,7 @@ return {
                     main = {
                         --- Main colors
                         ---b3e8b4 green
-                        ---f77685 red
+                        ---ffb9e5 red
                         ---ffcda5 orange
                         ---9ecbff azure
                         ---b392f0 purple
@@ -267,25 +266,28 @@ return {
                         ---d7ffa5 yellow
                         ---F06080 red-light
                         ---d1d4c7 gray
-                        pine = '#b392f0', -- main keywords (function, return, if else....)
-                        foam = '#ff4a6b', -- variables (parameter, arguments, nested methods) x2
-                        gold = '#b3e8b4', -- strings x2
-                        text = '#9ecbff', --strings and number of columns:selected
-                        rose = '#9ccfd8', -- keywords (boolean) and nested function
-                        iris = '#00ffd2', -- Special Comments  ( NOTE:)
-                        -- base = '#24292e', --bg
-                        base = '#24292e', --bg
-                        subtle = '#636b74', --comments,brackets, operators
-                        --- Secondary ?
-                        surface = '#24292e', -- lines between {}, bg autosuggesiotn, telescope etc..
-                        overlay = '#2b3036', --  bg cursor
-                        muted = '#636b74', -- relative number color
+												---ff4a6b accent Red
+												---00ffd2 accent green
+                        -- pine = '#EDD2B2', -- main keywords (function, return, if else....)
+                        -- foam = '#ff7b72', -- variables (parameter, arguments, nested methods) x2
+                        -- gold = '#b392f0', -- strings x2
+                        -- text = '#b392f0', -- strings and number of columns:selected
+                        -- rose = '#9ecbff', -- keywords (boolean) and nested function
+                        -- iris = '#00ffd2', -- Special Comments  ( NOTE:)
+                        -- base = '#24292e', -- bg
+                        -- subtle = '#636b74', --comments,brackets, operators
+                        --------
+												-- Secondary 
+                        --------
+                        -- surface = '#24292e', -- lines between {}, bg autosuggesiotn, telescope etc..
+                        -- overlay = '#2b3036', --  bg cursor
+                        -- muted = '#636b74', -- relative number color
                         -- love = '#f77685', -- variables
-                        love = '#c88f99', -- variables
-                        leaf = '#2D9FA5',
-                        highlight_low = '#EDD2B2',
-                        highlight_med = '#2D9FA5',
-                        highlight_high = '#929aa5',
+                        -- love = '#c88f99', -- variables
+                        -- leaf = '#2D9FA5',
+                        -- highlight_low = '#EDD2B2',
+                        -- highlight_med = '#2D9FA5',
+                        -- highlight_high = '#929aa5',
                     },
                 },
 
@@ -296,10 +298,12 @@ return {
                     -- VertSplit = { fg = "muted", bg = "muted" },
                     -- Visual = { fg = "base", bg = "text", inherit = false },
                     ---- Set background color for current line number (optional)
-                    LineNr = { bg = '#000000', fg = '#636b74' },
-                    CursorLineNr = { bg = '#000000', fg = '#9ecbff' },
+                    LineNr = { bg = '#16191d', fg = '#636b74' },
+                    CursorLineNr = { bg = '#16191d', fg = '#9ecbff' },
                     ['@markup.strong'] = { bold = true },
                     ['@markup.italic'] = { italic = true },
+										-- ['@spell.markdown'] = {fg='#d1e6ff'},
+										-- markdownH3 = {fg= '#ff0000' }
                 },
 
                 before_highlight = function(group, highlight, palette)

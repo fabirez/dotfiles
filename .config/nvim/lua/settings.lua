@@ -6,15 +6,15 @@
 -- Make line numbers default
 vim.o.number = true
 -- Show the current number line not based on the relative number.
-vim.wo.number = true 
+vim.wo.number = true
 -- show relative numbers
-vim.o.relativenumber = true 
+vim.o.relativenumber = true
 -- highlight the current line
-vim.o.cursorline = true 
+vim.o.cursorline = true
  -- enable true color support
 vim.opt.termguicolors = true
 -- hide mode display  -- INSERT --
-vim.o.showmode = false 
+vim.o.showmode = false
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
@@ -42,13 +42,51 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	end,
 })
 
+
+-- [[ Basic Usercommands ]]
+-- :h nvim_create_user_command
+-- bag:true -> true when the commands cna be used in the shell.
+-- vim.api.nvim_create_user_command('SayHello', 'echo "Hello world!"', {'bang': v:true}); 
+vim.api.nvim_create_user_command('SayHello', 'echo "Hello world!"', {});
+
+-- If the keyword arg is missing, start from 0
+--
+vim.api.nvim_create_user_command("Mhelp",
+function (opts)
+
+	local doc = opts.fargs[1]
+	local keyword = opts.fargs[2]
+
+	-- Get the filename, and the column number, divided by ":" 
+	-- The number column rapresent the first match in the doc, of the keyword. 
+	-- e.g: Default Variables.html:329K
+	-- NOTE: Test without "\\"
+  local get = vim.fn.systemlist("bash ~/dotfiles/.config/.local/bin/docs/getline " .. string.lower(doc) .. " " .. "\\" ..  keyword)
+
+	local get_s = get[1]
+	local filename = string.match(get_s, "%w+%.%w+")
+	local column = string.match(get_s, "%d+")
+
+	-- doc is the folder , filename is the file.
+	-- ~/docs/<doc>/<filename> 
+  local result = vim.fn.systemlist("bash ~/dotfiles/.config/.local/bin/docs/visualizedoc " .. string.lower(doc) .. " "  .. filename)
+
+	 vim.cmd("split | enew")
+	 vim.bo.buftype = "nofile"
+
+	 vim.api.nvim_buf_set_lines(0, 0, -1, false, result)
+	local cln = tonumber(column)
+	vim.fn.cursor(cln,1)
+
+end , {nargs='*'})
+
 -- Line wrapping
 vim.o.wrap = false --  don't break the lines for fit the window width
 vim.o.linebreak = true -- wraps line at word boundaries.
 
 -- Search settings
 -- When we search /, make it case-insensitive
-vim.o.ignorecase = true 
+vim.o.ignorecase = true
 -- If we have a different case (aA) start to be case-sensitive or with \C; 
 vim.o.smartcase = true
 
@@ -73,7 +111,7 @@ vim.o.splitbelow = false
 
 -- Scrolling behavior
 -- minimal number of screen lines to keep above and below the cursor
-vim.o.scrolloff = 10 
+vim.o.scrolloff = 10
 -- minimal number of screen columns to keep on either side of the cursor
 -- vim.o.sidescrolloff = 8 
 
@@ -81,7 +119,7 @@ vim.o.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.o.confirm = true
+-- vim.o.confirm = true
 
 
 -- Sets how neovim will display certain whitespace characters in the editor.
@@ -102,15 +140,15 @@ vim.o.inccommand = 'split'
 --  Neovim will use the same indentation level as the previous line.
 vim.o.autoindent = true
 --  number of spaces for each level of indentation
-vim.o.shiftwidth = 2 
+vim.o.shiftwidth = 2
 -- number of spaces that a tab character represents
-vim.o.tabstop = 2 
+vim.o.tabstop = 2
 --  number of spaces for a tab when editing
-vim.o.softtabstop = 2 
+vim.o.softtabstop = 2
 -- convert tabs to spaces
 vim.o.expandtab =  false
  -- enable smart indentation
-vim.o.smartindent = true 
+vim.o.smartindent = true
 -------
 --Custom
 ------

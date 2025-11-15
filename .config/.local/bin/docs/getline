@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOC=$1
+KEYWORD=$2
+PATH_DOCS="$HOME/docs/$DOC" #~/docs/bash 
+
+# -F:  Treat all patterns as literals instead of as regular expressions. (instead of escape \$\^\.\{\} they will be *escaped* by default) 
+# -H:  Get also the filename in the match
+# -o:  Only the match
+# -n:  Number line of the match
+# -m:  Max matches lines (1 match)
+
+rg -FHon -m=1 -- "${KEYWORD}" "$PATH_DOCS" | rg -o --multiline '\w+\.\w+:[0-9]+' 
