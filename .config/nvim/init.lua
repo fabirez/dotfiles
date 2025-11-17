@@ -1,5 +1,7 @@
 require("keymaps")
 require("settings")
+require("autocommands")
+require("usercommands")
 require("plugins.statusline")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -30,6 +32,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+--
 require("lazy").setup({
 	require('plugins.colorscheme'),
 	require('plugins.flash'),
@@ -38,4 +41,5 @@ require("lazy").setup({
 	require('plugins.treesitter'),
 	require('plugins.autocompletion'),
 	require('plugins.lsp'),
+	-- require('themes.my_theme').setup(),
 })

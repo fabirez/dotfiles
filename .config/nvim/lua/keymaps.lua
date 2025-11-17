@@ -1,6 +1,5 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
---
 local opts = { noremap = true, silent = true }
 
 -- Set leader key
@@ -108,10 +107,8 @@ end
 
 
 -- Jumping to title to tiles in md files
-
 vim.keymap.set("n", "<leader>nh",":/\\v^#{1,5}<CR>n", opts)
 
 -- Show the current marks
 vim.keymap.set("n", "<leader>m", ":marks <CR>", opts)
-
 

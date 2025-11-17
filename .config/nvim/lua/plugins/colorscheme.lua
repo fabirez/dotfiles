@@ -256,27 +256,15 @@ return {
                     -- Override the builtin palette per variant
                     --c3e88d for string ?
                     main = {
-                        --- Main colors
-                        ---b3e8b4 green
-                        ---ffb9e5 red
-                        ---ffcda5 orange
-                        ---9ecbff azure
-                        ---b392f0 purple
-                        ---d1e6ff white/azure
-                        ---d7ffa5 yellow
-                        ---F06080 red-light
-                        ---d1d4c7 gray
-												---ff4a6b accent Red
-												---00ffd2 accent green
-                        -- pine = '#EDD2B2', -- main keywords (function, return, if else....)
-                        -- foam = '#ff7b72', -- variables (parameter, arguments, nested methods) x2
-                        -- gold = '#b392f0', -- strings x2
-                        -- text = '#b392f0', -- strings and number of columns:selected
-                        -- rose = '#9ecbff', -- keywords (boolean) and nested function
-                        -- iris = '#00ffd2', -- Special Comments  ( NOTE:)
-                        -- base = '#24292e', -- bg
-                        -- subtle = '#636b74', --comments,brackets, operators
-                        --------
+                        -- pine = '#9ecbff', -- main keywords (function, return, if else....)
+                        -- foam = '#f77685', -- variables (parameter, arguments, nested methods) x2
+                        -- gold = '#faaa75', -- strings x2
+                        -- text = '#d1d4c7', -- strings and number of columns:selected
+                        -- rose = '#79bfff', -- keywords (boolean) and nested function
+                        -- iris = '#b392f0', -- Special Comments  ( NOTE:)
+                        -- base = '#1C1C1C', -- bg
+                        -- subtle = '#5F5F87', --comments,brackets, operators
+                        ------
 												-- Secondary 
                         --------
                         -- surface = '#24292e', -- lines between {}, bg autosuggesiotn, telescope etc..
@@ -322,7 +310,40 @@ return {
             -- vim.cmd("colorscheme rose-pine-main")
             -- vim.cmd("colorscheme rose-pine-moon")
             -- vim.cmd("colorscheme rose-pine-dawn")
-            vim.cmd 'colorscheme rose-pine'
+            -- vim.cmd 'colorscheme rose-pine'
         end,
     },
+
+
+	-- {
+	-- 	-- local M = {};
+	-- 	name="custom_colorscheme",
+	-- 	config = function()
+	--
+	-- 		 local palette = {
+	-- 			red = "#780000"
+	-- 		}
+	--
+	--
+	-- 		-- highlights
+	-- 		-- {name} = {val}
+	-- 		local highlights = {
+	-- 			Visual  =  {fg = palette.red, bg = palette.red},
+	-- 			Normal  =  {fg = palette.red},
+	-- 			Replace =  {fg = palette.red}
+	-- 		}
+	--
+	--
+	-- 		for name, val in pairs(highlights) do
+	-- 			vim.api.nvim_set_hl(0, name, val)
+	-- 		end
+	--
+	-- 		vim.cmd 'custom_colorscheme'
+	-- 	end
+	-- -- return M
+	-- },
+
+
 }
+
+
