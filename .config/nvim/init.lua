@@ -41,5 +41,7 @@ require("lazy").setup({
 	require('plugins.treesitter'),
 	require('plugins.autocompletion'),
 	require('plugins.lsp'),
+	require('plugins.nls'),
+	require("plugins.obsidian")
 	-- require('themes.my_theme').setup(),
 })

@@ -10,7 +10,7 @@ vim.api.nvim_set_hl(0, "StatusLineL5", { fg = "#ffffff",  bold = false })
 
 -- Create statusline
 function StatusLine.active()
-	return "%#StatusLineL1# %{statuslineV0} %q%< %f%<  %#StatusLineL0#%h%m%r%=%b %#StatusLineL2#0x%b %#StatusLineL3#%l %#StatusLineL4#%c%V %#StatusLineL4#%P"
+	return "%#StatusLineL1# %{statuslineV0} %q%< %f%<  %#StatusLineL0#%h%m%r%=%b  %#StatusLineL2#0x%b  %#StatusLineL3#%l %#StatusLineL4#%c%V  %#StatusLineL4#%P"
 end
 
 function StatusLine.delete()

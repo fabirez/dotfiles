@@ -27,7 +27,6 @@ vim.keymap.set("v", ">", ">gv", opts)
 -- Keep last yanked when pasting
 vim.keymap.set("v", "p", '"_dP', opts)
 
-
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
@@ -39,14 +38,18 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<leader>h', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<leader>l', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<leader>j', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<leader>k', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set("n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+
+vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Create a splitted window horizontal" })
+vim.keymap.set("n", "<leader>|", "<C-w>v", { desc = "Create a splitted window vertical" })
 
 
 -- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 ------- Custom
 -- Open file explorer
@@ -57,7 +60,6 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Backtick
 vim.keymap.set("i", "<A-\\>", "`", opts)
-
 
 -- Snippets test
 vim.keymap.set(
@@ -105,10 +107,12 @@ function TranslateIt()
 	vim.ui.open("https://translate.google.com/?sl=en&tl=it&text=" .. selectedWord .. "&op=translate")
 end
 
-
 -- Jumping to title to tiles in md files
-vim.keymap.set("n", "<leader>nh",":/\\v^#{1,5}<CR>n", opts)
+vim.keymap.set("n", "<leader>nh", ":/\\v^#{1,5}<CR>n", opts)
 
 -- Show the current marks
 vim.keymap.set("n", "<leader>m", ":marks <CR>", opts)
 
+-- Format on Keybinds
+-- :h lsp.buf.format
+vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format({ async = false }) <CR>")
