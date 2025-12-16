@@ -93,11 +93,11 @@ return {
 
 								     --Displays hover information about the symbol under the cursor in a floating window. 
 								     -- :h vim.lsp.buf.hover
-								     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = event.buf})
+								     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = event.buf})
 
 				            -- WARN: This is not Goto Definition, this is Goto Declaration.
 				            --  For example, in C this would take you to the header.
-				            -- map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+				            map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
 				            -- The following two autocommands are used to highlight references of the
 				            -- word under your cursor when your cursor rests there for a little while.

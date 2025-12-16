@@ -43,10 +43,8 @@ vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right
 vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-
 vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Create a splitted window horizontal" })
 vim.keymap.set("n", "<leader>|", "<C-w>v", { desc = "Create a splitted window vertical" })
-
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -61,22 +59,28 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Backtick
 vim.keymap.set("i", "<A-\\>", "`", opts)
 
--- Snippets test
+-- Basic Snippets 
 vim.keymap.set(
 	"n",
 	"<leader>h1",
-	":i<CR>text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl text-foreground <CR><Esc>",
+	"i<CR><h1 className=\"text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl text-foreground\"></h1><Esc>cit",
 	opts
 )
 
 vim.keymap.set(
 	"n",
 	"<leader>h3",
-	":i<CR>font-mono text-xs/6 font-medium uppercase tracking-widest text-gray-600 <CR><Esc>",
+	"i<CR><h3 className=\"font-mono text-xs/6 font-medium uppercase tracking-widest text-gray-600\"></h3><Esc>cit",
 	opts
 )
 
--- TODO
+vim.keymap.set(
+	"n",
+	"<leader>p",
+	"i<CR><p className=\"max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400\"></p><Esc>cit",
+	opts
+)
+
 vim.api.nvim_set_keymap("n", "<leader>td", ":lua NewTodo()<CR>", opts)
 function NewTodo()
 	vim.cmd([[

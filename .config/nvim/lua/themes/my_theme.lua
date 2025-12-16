@@ -5,7 +5,8 @@ function M.setup()
         red    = "#FD9B9B",
         red_2    = "#FD9B9B",
 
-				orange_accent = "#ff5d73",
+				-- orange_accent = "#ff5d73",
+				orange_accent = "#fab387",
 
 				green  = "#9BFDA5",
         green_accent = "#9BFDA5",
@@ -22,11 +23,12 @@ function M.setup()
         black  = "#000000",
 				gray_800 = "#171717",
 				gray_400 = "#a3a3a3",
+				gray = "#96a0a1",
     }
 
     local highlights = {
         -- Basic
-        Normal       = { fg = palette.white, bg = palette.black },
+        Normal       = { fg = palette.white, bg = palette.gray },
         -- Visual       = { bg = palette.},
         -- CursorLine   = { bg = palette.purple },
         LineNr       = { fg = palette.gray_400, },
