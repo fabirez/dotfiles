@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$DOT/.local/bin/log"
+# Get the origin for the current repo.
+# https://github.com/<user>/<namerepo>.git
+ORIGIN=$(git remote get-url origin 2> /dev/null)
+
+# Check if we got any error, 
+# And if it is a github repo
+if [[ ($? -ne 0) || ("${ORIGIN}" != *github*) ]]; then
+	error "current dir '$(basename "${PWD}")' is not in a github repo..."
+fi
+
+# Let the user know what we're opening, formatting org/repo in green, open.
+success "opening ${ORIGIN}"
+python3 -c "import webbrowser; webbrowser.open_new_tab('${ORIGIN}')"
+# xdg-open "${ORIGIN}"

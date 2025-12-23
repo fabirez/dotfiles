@@ -2,15 +2,20 @@
 padding={x=4,y=4}
 opacity=1
 # opacity=0
-blur=true
+# blur=true
 
 [font]
-size=9
-normal={family='Monaspace Neon NF', style='regular'}
+# size=9
+size=10
+# normal={family='Monaspace Neon NF', style='regular'}
 
 [mouse]
 hide_when_typing=true
 
 [colors]
 [colors.primary]
-background="#24292e"
+
+# background="#24292e"
+# background="#d1d5dc"
+# background="#cacaca"
+background="#000000"

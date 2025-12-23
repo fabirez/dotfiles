@@ -5,7 +5,6 @@ function M.setup()
         red    = "#FD9B9B",
         red_2    = "#FD9B9B",
 
-				-- orange_accent = "#ff5d73",
 				orange_accent = "#fab387",
 
 				green  = "#9BFDA5",
@@ -89,7 +88,6 @@ function M.setup()
         LspDiagnosticsDefaultWarning= { fg = palette.red_2 },
         LspDiagnosticsDefaultInformation = { fg = palette.azure_2 },
         LspDiagnosticsDefaultHint   = { fg = palette.azure },
-				["@lsp.typemod.parameter.declaration.lua"] = {fg = palette.white },
 
         -- Diagnostic virtual text
         DiagnosticVirtualTextError  = { fg = palette.azure },
@@ -134,22 +132,3 @@ function M.setup()
 end
 
 return M
-
--- -- nvim_set_hl({ns_id}, {name}, {val})                            
--- -- :h nvim_set_hl
--- ----  {ns_id}  Namespace id for this highlight |nvim_create_namespace()|.
--- --          Use 0 to set a highlight group globally |:highlight|.
--- --          Highlights from non-global namespaces are not active by
--- --          default, use |nvim_set_hl_ns()| or |nvim_win_set_hl_ns()| to
--- --          activate them.
--- ---- {name}   Highlight group name, e.g. "ErrorMsg"
--- ---- {val}    Highlight definition map, accepts the following keys:
--- --          • fg: color name or "#RRGGBB", see note.
--- --          • bg: color name or "#RRGGBB", see note.
--- --          • sp: color name or "#RRGGBB"
--- --          • bold: boolean
--- --          • underline: boolean
--- --          • undercurl: boolean
--- --					• italic: boolean
-
-

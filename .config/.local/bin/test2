@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-RESULT=$($DOT/.local/bin/test)
-
-echo "We are on fire."

@@ -32,6 +32,7 @@ fi
 
 # Zeit
 export ZEIT_DB=~/.config/zeit.db
+
 # bun
 export BUNPATH="$HOME/.bun"
 if ! [[ $PATH =~ $BUNPATH ]]; then
@@ -49,6 +50,9 @@ if ! [[ $PATH =~ $LOCALBIN ]]; then
     PATH="$LOCALBIN/.local/bin:$PATH"
 fi
 
+# Go
+export PATH="$HOME/go/bin:$PATH"
+
 # Eww
 export eww="$HOME/eww/target/release/eww"
 # Flutter
@@ -65,8 +69,9 @@ alias ls='eza -a --tree --level=1 --icons=always'
 alias man="$DOT/.local/bin/manbat $1"
 alias installdoc="$DOT/.local/bin/docs/installdocs $1"
 alias ctw="$DOT/.local/bin/change_wallpaper"
-alias zeit="$HOME/temp/zeit/zeit"
+# alias zeit="$HOME/temp/zeit/zeit"
 alias eww="~/eww/target/release/eww"
+alias gho="$DOT/.local/bin/github-open"
 
 # Use syntax highlight for `cat`:
 # -pp alias for '--style=plain --paging=never'

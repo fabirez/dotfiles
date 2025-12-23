@@ -48,8 +48,9 @@ vim.keymap.set("n", "<leader>|", "<C-w>v", { desc = "Create a splitted window ve
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
-------- Custom
+------------------------
+--- Custom
+------------------------
 -- Open file explorer
 vim.keymap.set("n", "<Tab>", ":Ex<CR>", opts)
 
@@ -59,25 +60,25 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Backtick
 vim.keymap.set("i", "<A-\\>", "`", opts)
 
--- Basic Snippets 
+-- Basic Snippets
 vim.keymap.set(
 	"n",
 	"<leader>h1",
-	"i<CR><h1 className=\"text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl text-foreground\"></h1><Esc>cit",
+	'i<CR><h1 className="text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl text-foreground"></h1><Esc>cit',
 	opts
 )
 
 vim.keymap.set(
 	"n",
 	"<leader>h3",
-	"i<CR><h3 className=\"font-mono text-xs/6 font-medium uppercase tracking-widest text-gray-600\"></h3><Esc>cit",
+	'i<CR><h3 className="font-mono text-xs/6 font-medium uppercase tracking-widest text-gray-600"></h3><Esc>cit',
 	opts
 )
 
 vim.keymap.set(
 	"n",
 	"<leader>p",
-	"i<CR><p className=\"max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400\"></p><Esc>cit",
+	'i<CR><p className="max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400"></p><Esc>cit',
 	opts
 )
 
