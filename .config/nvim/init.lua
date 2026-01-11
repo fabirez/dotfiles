@@ -35,7 +35,6 @@ vim.opt.rtp:prepend(lazypath)
 --
 require("lazy").setup({
 	require("plugins.colorscheme"),
-	require("plugins.flash"),
 	require("plugins.sorround"),
 	require("plugins.telescope"),
 	require("plugins.treesitter"),

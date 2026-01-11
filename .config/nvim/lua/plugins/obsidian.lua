@@ -13,6 +13,9 @@ return {
 	---@module 'obsidian'
 	---@type obsidian.config
 	opts = {
+		ui = {
+			enable = false,
+		},
 		workspaces = {
 			-- {
 			--   name = "personal",
@@ -24,6 +27,5 @@ return {
 			},
 		},
 		legacy_commands = false,
-		-- see below for full list of options 👇
 	},
 }

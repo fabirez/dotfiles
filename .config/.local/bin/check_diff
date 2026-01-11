@@ -1,0 +1,19 @@
+#!/usr/bin/env bash 
+
+set -euo pipefail
+
+EXPECT="$1"
+YOUR="$2"
+
+
+# EXPECT_TMP="/tmp/expect$(date +%N).json"
+# YOUR_TMP="/tmp/your$(date +%N).json"
+
+EXPECT_TMP="$(mktemp)"
+YOUR_TMP="$(mktemp)"
+
+
+jq -R -s 'split("\n") | map(select(length > 0))' "$EXPECT" > "$EXPECT_TMP"
+jq -R -s 'split("\n") | map(select(length > 0))' "$YOUR" > "$YOUR_TMP"
+
+nvim -d "$EXPECT_TMP" "$YOUR_TMP"

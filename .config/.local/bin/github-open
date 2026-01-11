@@ -15,4 +15,3 @@ fi
 # Let the user know what we're opening, formatting org/repo in green, open.
 success "opening ${ORIGIN}"
 python3 -c "import webbrowser; webbrowser.open_new_tab('${ORIGIN}')"
-# xdg-open "${ORIGIN}"

@@ -1,13 +1,22 @@
+[env]
+TERM = "xterm-256color"
+
 [window]
 padding={x=4,y=4}
 opacity=1
 # opacity=0
 # blur=true
+decorations = "None"
 
 [font]
-# size=9
-size=10
+size=9
 # normal={family='Monaspace Neon NF', style='regular'}
+# bold={family='Monaspace Neon NF', style='bold'}
+# italic={family='Monaspace Neon NF', style='italic'}
+
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 
 [mouse]
 hide_when_typing=true

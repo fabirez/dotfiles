@@ -8,7 +8,8 @@
   "gtk-layer-shell": true,
   "modules-left": [
     "custom/fedora_icon",
-    "hyprland/workspaces"
+    // "hyprland/workspaces"
+		"sway/workspaces"
   ],
   "modules-center": [],
   "modules-right": [

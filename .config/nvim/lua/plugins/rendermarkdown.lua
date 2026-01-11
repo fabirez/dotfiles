@@ -1,5 +1,6 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
+	cmd = "RenderMarkdown",
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
 	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
 	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
@@ -12,7 +13,7 @@ return {
 		-- Vim modes that will show a rendered view of the markdown file, :h mode(), for all enabled
 		-- components. Individual components can be enabled for other modes. Remaining modes will be
 		-- unaffected by this plugin.
-		render_modes = {"gc"},
+		render_modes = {""},
 		-- Milliseconds that must pass before updating marks, updates occur.
 		-- within the context of the visible window, not the entire buffer.
 		debounce = 100,
@@ -110,7 +111,7 @@ return {
 		},
 		latex = {
 			-- Turn on / off latex rendering.
-			enabled = false,
+			enabled = true,
 			-- Additional modes to render latex.
 			render_modes = false,
 			-- Executable used to convert latex formula to rendered unicode.

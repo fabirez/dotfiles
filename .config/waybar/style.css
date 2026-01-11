@@ -59,11 +59,15 @@ tooltip {
   opacity: 0.9;
 }
 
-#workspaces button.active {
+/* #workspaces button.current_output */
+#workspaces button.active,
+#workspaces button.visible
+{
   color: @bg-azure;
-  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  /* transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
   opacity: 0.95;
 }
+
 
 #battery,
 #backlight,
