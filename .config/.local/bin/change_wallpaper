@@ -5,8 +5,25 @@ set -euo pipefail
 PATH_IMAGES="$HOME/Scaricati/images/"
 IMAGE=$(fzf --walker-root "$PATH_IMAGES" --preview 'chafa {}' --preview-window up,80,border-horizontal  --bind 'ctrl-f:change-preview-window(80%|50%)' )
 
-# Set the image with hyprpaper
-hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
+
+# man sway#ENVIRONMENT
+# SWAYSOCK unique variable by sway.
+if [[ -n "$SWAYSOCK" ]]; then
+	# Set the image with sway
+ echo "hello"
+ sway "output * background $IMAGE fill #000000"
+fi
+
+if [[ "$DESKTOP_SESSION" ==  "hyprland" ]]; then
+	# Set the image with hyprpaper
+	hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
+fi
+
+
+# if [[ "$DESKTOP_SESSION" ==  "i3" ]]; then
+# 	# Set the image with hyprpaper
+# 	hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
+# fi
 
 ### Example from the manual:
 #fzf --height 40% --layout reverse --info inline --border \
