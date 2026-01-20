@@ -1,13 +1,75 @@
 {
+  "custom/fedora_icon": {
+    "tooltip": false,
+    "format": "",
+    "return-type": "text"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "[01]",
+      "2": "[02]",
+      "3": "[03]",
+      "4": "[04]",
+      "5": "[05]",
+      "6": "[06]",
+      "7": "[07]",
+      "8": "[08]",
+      "9": "[09]",
+      "10": "[10]"
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "[01]",
+      "2": "[02]",
+      "3": "[03]",
+      "4": "[04]",
+      "5": "[05]",
+      "6": "[06]",
+      "7": "[07]",
+      "8": "[08]",
+      "9": "[09]",
+      "10": "[10]"
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false
+  },
   "custom/padding": {
     "tooltip": false,
     "format": " ",
     "return-type": "text"
   },
-  "custom/fedora_icon": {
-    "tooltip": false,
-    "format": "",
-    "return-type": "text"
+  "custom/zeit": {
+    "format": "󰔶 ",
+    "exec": "$DOT/waybar/scripts/zeit-waybar-wofi.sh",
+    "on-click": "$DOT/waybar/scripts/zeit-waybar-wofi.sh click",
+    "interval": 10
+},
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "{icon}",
+    "format-muted": "  ",
+    "format-icons": {
+      "headphone": "  ",
+      "default": [
+        " ",
+        " ",
+        "  "
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": "  ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "battery": {
     "states": {
@@ -28,90 +90,26 @@
       "  "
     ]
   },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": [
-      " ",
-      "󰽣 ",
-      "󰽥 ",
-      "󰓠  "
-    ]
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": " ",
-      "power-saver": " "
-    }
-  },
-  "network": {
-    "format-wifi": "  ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  },
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-bluetooth-muted": "{icon}",
-    "format-muted": "  ",
-    "format-icons": {
-      "headphone": "  ",
-      "default": [
-        " ",
-        " ",
-        "  "
-      ]
-    },
-    "on-click": "pavucontrol"
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "[01]",
-      "2": "[02]",
-      "3": "[03]",
-      "4": "[04]",
-      "5": "[05]",
-      "6": "[06]",
-      "7": "[07]",
-      "8": "[08]",
-      "9": "[09]",
-      "10": "[10]"
-    },
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend"
-    }
-  },
-  "custom/media_player": {
-    "format": "󰝚 ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/music_menu.xml",
-    "menu-actions": {
-      "play": "playerctl -p vlc play",
-      "pause": "playerctl -p vlc pause"
-    }
-  },
-  "custom/zeit": {
-    "format": "󰔶 ",
-    "exec": "$HOME/.config/waybar/scripts/zeit-waybar-wofi.sh",
-    "on-click": "$HOME/.config/waybar/scripts/zeit-waybar-wofi.sh click",
-    "interval": 10
-  }
+	 "clock": {
+				"format": "{:%a,%d %H:%M}",
+				"format-alt": "{:%A, %B %d, %Y (%R)}",
+				"tooltip-format": "<tt><small>{calendar}</small></tt>",
+				"calendar": {
+						 "mode"          : "year",
+						 "mode-mon-col"  : 3,
+						 "weeks-pos"     : "right",
+						 "on-scroll"     : 1,
+						 "on-click-right": "mode",
+						 "format": {
+									"months":     "<span color='#c8cbcf'><b>{}</b></span>",
+									"days":       "<span color='#636b74'><b>{}</b></span>",
+									"weeks":      "<span color='#c8cbcf'><b>W{}</b></span>",
+									"weekdays":   "<span color='#ffffff'><b>{}</b></span>",
+									"today":      "<span color='#9ecbff'><b><u>{}</u></b></span>"
+						 }
+				},
+				"actions": {
+						 "on-click-right": "mode"
+				}
+	 }
 }

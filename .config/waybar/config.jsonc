@@ -15,21 +15,15 @@
   "modules-right": [
     "custom/zeit",
     "custom/padding",
-    "backlight",
-    "custom/padding",
-    "custom/media_player",
-    "custom/padding",
     "pulseaudio",
     "custom/padding",
     "network",
     "custom/padding",
     "battery",
     "custom/padding",
-    "custom/power",
-    "custom/padding",
-    "clock",
+    "clock"
   ],
   "include": [
     "~/.config/waybar/modules.json"
-  ],
+  ]
 }

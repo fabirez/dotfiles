@@ -57,16 +57,19 @@ export PATH="$HOME/go/bin:$PATH"
 export eww="$HOME/eww/target/release/eww"
 # Flutter
 export flutter="$HOME/develop/flutter/bin/flutter:$PATH"
+# Editor
+export EDITOR="/usr/bin/nvim"
 # CONFING
 export XDG_CONFIG_HOME="$HOME/.config"
 
 alias eza='~/.cargo/bin/eza'
-# alias ls='eza -a --icons=always'
+alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
 
 # alias txnw="sh ~/code/shellScripting/tmux9.sh $1"
 alias man="$DOT/.local/bin/manbat $1"
+
 alias installdoc="$DOT/.local/bin/docs/installdocs $1"
 alias ctw="$DOT/.local/bin/change_wallpaper"
 alias eww="~/eww/target/release/eww"
@@ -82,15 +85,3 @@ alias check="$DOT/.local/bin/check_diff"
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-
-
-
-
-
-
-
-
-
-
-
-

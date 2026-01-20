@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ZEIT_BIN=zeit
+DMENU_PROGRAM=wofi
 
 as_hms() {
   local nanoseconds=$1

@@ -64,7 +64,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 
 # ╔════════════════════════════════════════╗
-# ║								   Input                 ║
+# ║								 Input                   ║
 # ╚════════════════════════════════════════╝
 
 #############################################################################################
@@ -183,6 +183,9 @@ bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container
 bindsym $mod+a focus parent
+
+# Kill focuse escape
+bindsym $mod+q kill 
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.

@@ -1,0 +1,39 @@
+{
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend"
+    }
+  },
+  "custom/media_player": {
+    "format": "󰝚 ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/music_menu.xml",
+    "menu-actions": {
+      "play": "playerctl -p vlc play",
+      "pause": "playerctl -p vlc pause"
+    }
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [" ", "󰽣 ", "󰽥 ", "󰓠  "]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  }
+}

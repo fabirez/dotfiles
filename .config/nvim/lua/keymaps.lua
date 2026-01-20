@@ -82,6 +82,14 @@ vim.keymap.set(
 	opts
 )
 
+-- Comments
+vim.keymap.set(
+	"n",
+	"<leader>ch",
+	'i<CR>print("===")<Esc>vip',
+	opts
+)
+
 vim.api.nvim_set_keymap("n", "<leader>td", ":lua NewTodo()<CR>", opts)
 function NewTodo()
 	vim.cmd([[
@@ -121,6 +129,7 @@ vim.keymap.set("n", "<leader>m", ":marks <CR>", opts)
 -- Format on Keybinds
 -- :h lsp.buf.format
 vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format({ async = false }) <CR>")
+
 
 -- Show the formatted markdown
 -- vim.keymap.set("n", "<leader>mp", ":RenderMarkdown preview<CR>")
