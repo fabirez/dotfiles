@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+tmux new-session notes
+tmux attach -t notes

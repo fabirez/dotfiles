@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# set -euo pipefail
+
+COMMAND1="$1"
+COMMAND2="$2"
+CMDNVIM=nvim +'setlocal nobuflisted' +'setlocal buftype=nofile'
 
 # :h nobuflisted (don't put it in the buflist)
 # :h nofile	 will not be written; beacuse you can quit without using "!"
 
-man "$1" | cat | nvim +"setlocal nobuflisted" +"setlocal buftype=nofile" 
-
+# -z return True if the lenght of the string is zero
+if [[ -z $COMMAND2 ]]; then
+	man "$COMMAND1" | cat | $CMDNVIM
+else
+	man "$COMMAND1 $COMMAND2" 
+fi
