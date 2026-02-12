@@ -1,6 +1,6 @@
 @define-color bg-white #ffffff;
 @define-color bg-black #24292e;
-@define-color bg-gray #636b74;
+@define-color bg-gray #ffffff;
 @define-color bg-azure #9ecbff;
 @define-color bg-red-accent #fd9680;
 @define-color bg-red #f77685;
@@ -12,7 +12,7 @@
 * {
   border: none;
   font-family: "JetBrainsMono Nerd Font";
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .modules-right {
@@ -20,7 +20,8 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.9);
+  /* background: rgba(0, 0, 0, 0.9); */
+  background: #ff007f;
   margin-top: 8px;
 }
 

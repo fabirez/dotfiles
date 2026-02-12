@@ -1,26 +1,8 @@
 {
   "custom/fedora_icon": {
     "tooltip": false,
-    "format": "",
+    "format": "󰣇",
     "return-type": "text"
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "[01]",
-      "2": "[02]",
-      "3": "[03]",
-      "4": "[04]",
-      "5": "[05]",
-      "6": "[06]",
-      "7": "[07]",
-      "8": "[08]",
-      "9": "[09]",
-      "10": "[10]"
-    },
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false
   },
   "sway/workspaces": {
     "format": "{icon}",

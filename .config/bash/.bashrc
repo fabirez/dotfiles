@@ -24,27 +24,19 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# config
+# DOTFILES
 export DOT="$HOME/dotfiles/.config"
 if ! [[ $PATH =~ $dot ]]; then
     PATH="$PATH:$DOT//"
 fi
 
-# Zeit
-export ZEIT_DB=~/.config/zeit.db
-
-# bun
-export BUNPATH="$HOME/.bun"
-if ! [[ $PATH =~ $BUNPATH ]]; then
-    PATH="$BUNPATH/bin:$PATH"
-fi
 # Mybin
 export MYBINPATH="$HOME/mybin"
 if ! [[ $PATH =~ $MYBINPATH ]]; then
     PATH="$MYBINPATH:$PATH"
 fi
 
-# CustomBin
+# CustomBin (where i took the script like txnw)
 export LOCALBIN="$HOME/dotfiles/.config"
 if ! [[ $PATH =~ $LOCALBIN ]]; then
     PATH="$LOCALBIN/.local/bin:$PATH"
@@ -52,7 +44,6 @@ fi
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
-
 # Eww
 export eww="$HOME/eww/target/release/eww"
 # Flutter
@@ -61,27 +52,23 @@ export flutter="$HOME/develop/flutter/bin/flutter:$PATH"
 export EDITOR="/usr/bin/nvim"
 # CONFING
 export XDG_CONFIG_HOME="$HOME/.config"
+# Starship
+export STARSHIP_CONFIG="$HOME/dotfiles/.config/starship/starship.toml"
 
-alias eza='~/.cargo/bin/eza'
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
-
-# alias txnw="sh ~/code/shellScripting/tmux9.sh $1"
-alias man="$DOT/.local/bin/manbat $1"
-
-alias installdoc="$DOT/.local/bin/docs/installdocs $1"
-alias ctw="$DOT/.local/bin/change_wallpaper"
-alias eww="~/eww/target/release/eww"
-alias gho="$DOT/.local/bin/github-open"
 
 # Use syntax highlight for `cat`:
 # -pp alias for '--style=plain --paging=never'
 alias cat='bat -pp'
 
+# history
 alias h="cat $HOME/.bash_history | fzf | sh"
 
-alias check="$DOT/.local/bin/check_diff"
+# alias man="$DOT/.local/bin/manbat $1"
+alias installdoc="$DOT/.local/bin/docs/installdocs $1"
 
+# Initialize 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"

@@ -39,9 +39,9 @@ require("lazy").setup({
 	require("plugins.telescope"),
 	require("plugins.treesitter"),
 	require("plugins.autocompletion"),
-	require("plugins.lsp"),
-	require("plugins.nls"),
 	require("plugins.obsidian"),
 	require("plugins.rendermarkdown"),
+	require("plugins.lsp"),
+	-- require("plugins.nls"),
 	-- require('themes.my_theme').setup(),
 })
