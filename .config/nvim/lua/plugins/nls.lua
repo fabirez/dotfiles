@@ -30,7 +30,6 @@ return {
 
 			formatting.black,
 			formatting.stylua,
-			--      formatting.shfmt.with { args = { '-i', '4' } },
 		}
 
 		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

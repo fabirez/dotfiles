@@ -4,6 +4,15 @@ require("autocommands")
 require("usercommands")
 require("plugins.statusline")
 
+vim.lsp.enable('ts-ls')
+vim.lsp.enable('astro-ls')
+vim.lsp.enable('css-ls')
+vim.lsp.enable('emmet-ls')
+vim.lsp.enable('go-ls')
+vim.lsp.enable('lua-ls')
+vim.lsp.enable('py-ls')
+vim.lsp.enable('tw-ls')
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -41,7 +50,6 @@ require("lazy").setup({
 	require("plugins.autocompletion"),
 	require("plugins.obsidian"),
 	require("plugins.rendermarkdown"),
-	require("plugins.lsp"),
-	-- require("plugins.nls"),
+	-- require("plugins.autoformat")
 	-- require('themes.my_theme').setup(),
 })
