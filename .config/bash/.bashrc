@@ -30,12 +30,6 @@ if ! [[ $PATH =~ $dot ]]; then
     PATH="$PATH:$DOT//"
 fi
 
-# Mybin
-export MYBINPATH="$HOME/mybin"
-if ! [[ $PATH =~ $MYBINPATH ]]; then
-    PATH="$MYBINPATH:$PATH"
-fi
-
 # CustomBin (where i took the script like txnw)
 export LOCALBIN="$HOME/dotfiles/.config"
 if ! [[ $PATH =~ $LOCALBIN ]]; then
@@ -48,6 +42,8 @@ export PATH="$HOME/go/bin:$PATH"
 export eww="$HOME/eww/target/release/eww"
 # Flutter
 export flutter="$HOME/develop/flutter/bin/flutter:$PATH"
+# Nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # Editor
 export EDITOR="/usr/bin/nvim"
 # CONFING
@@ -68,6 +64,9 @@ alias h="cat $HOME/.bash_history | fzf | sh"
 
 # alias man="$DOT/.local/bin/manbat $1"
 alias installdoc="$DOT/.local/bin/docs/installdocs $1"
+
+# yt-dlp
+alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
 
 # Initialize 
 eval "$(starship init bash)"

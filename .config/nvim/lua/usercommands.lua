@@ -34,3 +34,21 @@ function (opts)
 	vim.fn.cursor(cln,1)
 
 end , {nargs='*'})
+
+
+
+
+-- vim.api.nvim_create_user_command("Today",
+-- 	function(opts)
+-- 		local on_exit = function(obj)
+-- 			print(obj.code)
+-- 			print(obj.signal)
+-- 			print(obj.stdout)
+-- 			print(obj.stderr)
+-- 		end
+-- 	  local get = vim.system({'date', '+%d-%m-%y'}, {text=true}):wait()
+-- 	end, {nargs="*"})
+
+
+-- vim.api.nvim_create_user_command("Today", "echo 'Hello world'", {'bang': v:true});
+vim.api.nvim_create_user_command('Today', '!date "+%d-%m-%y"', {})

@@ -42,3 +42,5 @@ settings:
     global: never
   tabs.show:
     global: multiple
+  tabs.width:
+    global: 1%

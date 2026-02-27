@@ -1,12 +1,11 @@
 @define-color bg-white #ffffff;
 @define-color bg-black #24292e;
-@define-color bg-gray #ffffff;
+@define-color bg-gray #636b74;
 @define-color bg-azure #9ecbff;
 @define-color bg-red-accent #fd9680;
 @define-color bg-red #f77685;
 @define-color bg-yellow-accent #e6fd80;
 @define-color bg-orange-accent #faaa75;
-@define-color bg-purple #b392f0;
 @define-color bg-blue #79bfff;
 
 * {
@@ -20,8 +19,7 @@
 }
 
 window#waybar {
-  /* background: rgba(0, 0, 0, 0.9); */
-  background: #ff007f;
+  background: rgba(0, 0, 0, 0.9);
   margin-top: 8px;
 }
 

@@ -23,7 +23,7 @@ return {
 			-- },
 			{
 				name = "general",
-				path = "~/note/mynotes/obsidian-vault",
+				path = "~/notes/mynotes/obsidian-vault",
 			},
 		},
 		legacy_commands = false,
