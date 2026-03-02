@@ -62,8 +62,8 @@ alias cat='bat -pp'
 # history
 alias h="cat $HOME/.bash_history | fzf | sh"
 
-# alias man="$DOT/.local/bin/manbat $1"
-alias installdoc="$DOT/.local/bin/docs/installdocs $1"
+alias man="$DOT/.local/bin/manbat"
+alias installdoc="$DOT/.local/bin/docs/installdocs"
 
 # yt-dlp
 alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"

@@ -109,10 +109,21 @@ return {
 
 			-- :h vim.fs.root() or :h expand 
       vim.keymap.set('n', '<leader><leader>', function ()
-			local root = vim.fs.root(0, {'package.json', '.git' }) or utils.buffer_dir()
-					-- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one
+			-- 0 is the current buffer
+			-- if there is no .git file, just use the current directory as root 
+			local root = vim.fs.root(0, {'.git'}) or utils.buffer_dir()
+			-- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one
 			builtin.find_files({cwd = root, hidden = true})
 			end, { desc = '[S]earch [F]iles'})
+
+
+			-- :h telescope.utils
+      vim.keymap.set('n', '<leader>l', function ()
+			-- utils.buffer_dir() to search relative to open buffer
+			local root = utils.buffer_dir()
+			-- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one
+			builtin.find_files({cwd = root, hidden = true})
+			end, { desc = '[S]earch [F]iles In [L]ocal'})
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()

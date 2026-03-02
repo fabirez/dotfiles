@@ -110,8 +110,8 @@ function ToggleTheme()
 	end
 end
 
--- Not for a single char, but for and entire word.
-vim.keymap.set("n", "cw", "caw")
+-- Not for a single char, but for an entire word.
+vim.keymap.set("n", "cw", "ciw")
 
 vim.keymap.set("n", "<leader>ti", ":lua TranslateIt()<CR>", opts)
 

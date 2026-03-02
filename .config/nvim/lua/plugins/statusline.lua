@@ -2,11 +2,11 @@ StatusLine = {}
 
 -- Highlights
 vim.api.nvim_set_hl(0, "StatusLineL0", { fg = "#ffffff", bold = false })
-vim.api.nvim_set_hl(0, "StatusLineL1", { fg = "#ffffff",  bold = false })
-vim.api.nvim_set_hl(0, "StatusLineL2", { fg = "#ffffff",  bold = false })
-vim.api.nvim_set_hl(0, "StatusLineL3", { fg = "#ffffff",  bold = false })
-vim.api.nvim_set_hl(0, "StatusLineL4", { fg = "#ffffff",  bold = false })
-vim.api.nvim_set_hl(0, "StatusLineL5", { fg = "#ffffff",  bold = false })
+vim.api.nvim_set_hl(0, "StatusLineL1", { fg = "#ffffff", bold = false })
+vim.api.nvim_set_hl(0, "StatusLineL2", { fg = "#ffffff", bold = false })
+vim.api.nvim_set_hl(0, "StatusLineL3", { fg = "#ffffff", bold = false })
+vim.api.nvim_set_hl(0, "StatusLineL4", { fg = "#ffffff", bold = false })
+vim.api.nvim_set_hl(0, "StatusLineL5", { fg = "#ffffff", bold = false })
 
 -- Create statusline
 function StatusLine.active()
