@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+source "$DOT/.local/bin/log"
+
+#[o]ptimze[t]he[i]mages
+# and converting them in webp using [cwebp](https://developers.google.com/speed/webp/docs/cwebp)
+
+BEFORE=$(du --total -h *.{jpg,jpeg,png} 2>/dev/null | tail -n1)
+echo "======================================="
+info "Converting and compressing images"
+echo "======================================="
+
+fd ".*(jpe?g|png)" -x cwebp -m 6 -mt -af {} -o {.}.webp && rm  *.{jpg,jpeg,png} 2>/dev/null
+
+echo "======================================="
+success "Result"
+info "Before"
+echo $BEFORE
+info "After"
+du --total -h *.webp | tail -n1
+echo "======================================="
+
