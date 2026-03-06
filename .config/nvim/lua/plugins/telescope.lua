@@ -118,7 +118,7 @@ return {
 
 
 			-- :h telescope.utils
-      vim.keymap.set('n', '<leader>l', function ()
+      vim.keymap.set('n', '<leader>sl', function ()
 			-- utils.buffer_dir() to search relative to open buffer
 			local root = utils.buffer_dir()
 			-- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one

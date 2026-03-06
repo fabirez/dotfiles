@@ -46,10 +46,10 @@ require("lazy").setup({
 	require("plugins.colorscheme"),
 	require("plugins.sorround"),
 	require("plugins.telescope"),
-	require("plugins.treesitter"),
 	require("plugins.autocompletion"),
 	require("plugins.obsidian"),
 	require("plugins.rendermarkdown"),
+	require("plugins.treesitter"),
 	-- require("plugins.autoformat")
 	-- require('themes.my_theme').setup(),
 })

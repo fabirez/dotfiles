@@ -68,6 +68,9 @@ alias installdoc="$DOT/.local/bin/docs/installdocs"
 # yt-dlp
 alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
 
+# python
+alias py="python3"
+
 # Initialize 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"

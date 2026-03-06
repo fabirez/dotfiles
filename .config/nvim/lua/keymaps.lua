@@ -132,4 +132,4 @@ vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format({ async = false }) <C
 
 
 -- Show the formatted markdown
-vim.keymap.set("n", "<leader>sp", ":RenderMarkdown enable<CR> :RenderMarkdown preview<CR>")
+vim.keymap.set("n", "<leader>rm", ":RenderMarkdown enable<CR> :RenderMarkdown preview<CR>")
