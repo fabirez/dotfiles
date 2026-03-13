@@ -1,4 +1,21 @@
 #!/usr/bin/env bash
 
+cd $VAULT
+
 tmux new-session -d -s notes
-tmux attach-session -t notes
+
+tmux new-window -t notes:9
+tmux new-window -t notes:8
+tmux new-window -t notes:7
+
+tmux rename-window -t 9 "journal"
+tmux rename-window -t 8 "track"
+tmux rename-window -t 7 "todo"
+
+tmux send-keys -t "${TMUX_SESSION_NAME}:9" "cd 0Journal/ && nvim ."    C-m
+tmux send-keys -t "${TMUX_SESSION_NAME}:8" "cd ../ && nvim tracker.md" C-m
+tmux send-keys -t "${TMUX_SESSION_NAME}:7" "cd ../ && nvim todo.md"    C-m
+
+tmux send-keys -t "${TMUX_SESSION_NAME}:1" "nvim ."                    C-m
+
+tmux attach-session -t notes:1

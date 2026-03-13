@@ -24,32 +24,40 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# nvim
+alias nvim="$NVIM"
+
 # DOTFILES
 export DOT="$HOME/dotfiles/.config"
-if ! [[ $PATH =~ $dot ]]; then
-    PATH="$PATH:$DOT//"
+if ! [[ $PATH =~ $DOT ]]; then
+    PATH="$PATH:$DOT/"
 fi
 
-# CustomBin (where i took the script like txnw)
+
+# CustomBin 
 export LOCALBIN="$HOME/dotfiles/.config"
 if ! [[ $PATH =~ $LOCALBIN ]]; then
     PATH="$LOCALBIN/.local/bin:$PATH"
 fi
 
+# Path for Nvim
+PATH="/opt/nvim-linux-x86_64/bin/:$PATH"
+
 # Go
-export PATH="$HOME/go/bin:$PATH"
-# Eww
-export eww="$HOME/eww/target/release/eww"
-# Flutter
-export flutter="$HOME/develop/flutter/bin/flutter:$PATH"
-# Nvim
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+PATH="$HOME/go/bin:$PATH"
+
+
 # Editor
-export EDITOR="/usr/bin/nvim"
-# CONFING
+export EDITOR="$NVIM"
+# Config
 export XDG_CONFIG_HOME="$HOME/.config"
 # Starship
 export STARSHIP_CONFIG="$HOME/dotfiles/.config/starship/starship.toml"
+# Nvim look for configuration files in $XDG_CONFIG_HOME/$NVIM_APPNAME
+export NVIM_APPNAME="nvim"
+# Obsidian vault
+export VAULT="$HOME/notes/mynotes/obsidian-vault"
+
 
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
@@ -70,6 +78,9 @@ alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
 
 # python
 alias py="python3"
+
+# nvim prebuild
+alias nvimp="~/Downloads/nvim-linux-x86_64/bin/nvim"
 
 # Initialize 
 eval "$(starship init bash)"
