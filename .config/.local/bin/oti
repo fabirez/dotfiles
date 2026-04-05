@@ -16,6 +16,6 @@ success "Result"
 info "Before"
 echo $BEFORE
 info "After"
-du --total -h *.webp | tail -n1
+du --total -h *.webp 2>/dev/null | tail -n1
 echo "======================================="
 

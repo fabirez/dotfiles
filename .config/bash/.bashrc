@@ -24,31 +24,24 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# nvim
-alias nvim="$NVIM"
-
-# DOTFILES
-export DOT="$HOME/dotfiles/.config"
-if ! [[ $PATH =~ $DOT ]]; then
-    PATH="$PATH:$DOT/"
-fi
-
 
 # CustomBin 
-export LOCALBIN="$HOME/dotfiles/.config"
+export LOCALBIN="$HOME/dotfiles/.config/.local/bin"
 if ! [[ $PATH =~ $LOCALBIN ]]; then
-    PATH="$LOCALBIN/.local/bin:$PATH"
+    PATH="$LOCALBIN:$PATH"
 fi
 
-# Path for Nvim
-PATH="/opt/nvim-linux-x86_64/bin/:$PATH"
+# Nvim
+# PATH="/opt/nvim-linux-x86_64/bin/:$PATH"
 
 # Go
 PATH="$HOME/go/bin:$PATH"
+# Nvim
+PATH="/opt/nvim-linux-x86_64/bin/:$PATH"
 
 
 # Editor
-export EDITOR="$NVIM"
+export EDITOR="/opt/nvim-linux-x86_64/bin/nvim"
 # Config
 export XDG_CONFIG_HOME="$HOME/.config"
 # Starship
@@ -59,8 +52,7 @@ export NVIM_APPNAME="nvim"
 export VAULT="$HOME/notes/mynotes/obsidian-vault"
 
 
-alias ls='eza -a --icons=always'
-alias ll='eza -al --icons=always'
+alias ls='eza -al --icons=always --sort=type'
 alias lt='eza -a --tree --level=1 --icons=always'
 
 # Use syntax highlight for `cat`:
@@ -70,7 +62,7 @@ alias cat='bat -pp'
 # history
 alias h="cat $HOME/.bash_history | fzf | sh"
 
-alias man="$DOT/.local/bin/manbat"
+alias man="$LOCALBIN/manbat"
 alias installdoc="$DOT/.local/bin/docs/installdocs"
 
 # yt-dlp
@@ -80,8 +72,13 @@ alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
 alias py="python3"
 
 # nvim prebuild
-alias nvimp="~/Downloads/nvim-linux-x86_64/bin/nvim"
+alias nvimp="~/downloads/nvim-linux-x86_64/bin/nvim"
+
+# nvim
+alias nvim="/opt/nvim-linux-x86_64/bin/nvim"
 
 # Initialize 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+

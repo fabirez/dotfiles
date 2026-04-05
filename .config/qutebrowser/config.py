@@ -18,8 +18,8 @@ c.scrolling.bar = "always"
 # c.auto_save.session = True # save tabs on quit/restart
 
 # keybinding changes
-config.bind('za', 'open -t http://localhost:4321/')
-config.bind('zr', 'open -t http://locahost:5173/')
+config.bind('za',  'open -t http://localhost:4321/')
+config.bind('zr',  'open -t http://localhost:5173/')
 config.bind('zgh', 'open -t github.com/fabirez')
 
 config.bind('h', 'history')

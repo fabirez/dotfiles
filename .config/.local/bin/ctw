@@ -16,13 +16,12 @@ IMAGE=$(fzf --walker-root "$PATH_IMAGES" --preview 'chafa {}' --preview-window u
 # SWAYSOCK unique variable by sway.
 if [[ -n "$SWAYSOCK" ]]; then
 	# Set the image with sway
- echo "hello"
  sway "output * background $IMAGE fill #000000"
 elif [[ "$DESKTOP_SESSION" ==  "hyprland" ]]; then
 	# Set the image with hyprpaper
 	hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
-elif [[ "$DESKTOP_SESSION" ==  "i3" ]]; then
-	# Set the image with hyprpaper
-	hyprctl hyprpaper reload "eDP-1,$IMAGE"  >/dev/null 2>&1
+# elif [[ "$DESKTOP_SESSION" ==  "i3" ]]; then
+# 	# Set the image with i3
+# 	...
 fi
 

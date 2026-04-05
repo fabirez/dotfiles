@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Navigate between splits
 -- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
+--  Use <leader>+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -48,9 +48,11 @@ vim.keymap.set("n", "<leader>|", "<C-w>v", { desc = "Create a splitted window ve
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
 ------------------------
 --- Custom
 ------------------------
+
 -- Open file explorer
 vim.keymap.set("n", "<Tab>", ":Ex<CR>", opts)
 
@@ -90,6 +92,7 @@ vim.keymap.set(
 	opts
 )
 
+
 vim.api.nvim_set_keymap("n", "<leader>td", ":lua NewTodo()<CR>", opts)
 function NewTodo()
 	vim.cmd([[
@@ -103,7 +106,7 @@ vim.keymap.set("n", "<leader>tt", ":lua ToggleTheme()<CR>", opts)
 function ToggleTheme()
 	if vim.o.background == "dark" then
 		vim.o.background = "light"
-		vim.cmd([[colorscheme catppuccin-mocha]])
+		vim.cmd([[colorscheme lunaperche]])
 	else
 		vim.o.background = "dark"
 		vim.cmd([[colorscheme rose-pine]])
@@ -120,7 +123,7 @@ function TranslateIt()
 	vim.ui.open("https://translate.google.com/?sl=en&tl=it&text=" .. selectedWord .. "&op=translate")
 end
 
--- Jumping to title to tiles in md files
+-- Jumping to title to titles in md files
 vim.keymap.set("n", "<leader>nh", ":/\\v^#{1,5}<CR>n", opts)
 
 -- Show the current marks

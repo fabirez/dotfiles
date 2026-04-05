@@ -111,7 +111,7 @@ return {
       vim.keymap.set('n', '<leader><leader>', function ()
 			-- 0 is the current buffer
 			-- if there is no .git file, just use the current directory as root 
-			local root = vim.fs.root(0, {'.git'}) or utils.buffer_dir()
+			local root = vim.fs.root(0, {'package.json','.obsidian','.git'}) or utils.buffer_dir()
 			-- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one
 			builtin.find_files({cwd = root, hidden = true})
 			end, { desc = '[S]earch [F]iles'})

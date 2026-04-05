@@ -15,7 +15,7 @@
 # ╚════════════════════════════════════════════════════════════════════════════════╝
 
 # ╔════════════════════════════════════════╗
-# ║								Variables                ║
+# ║ Variables                              ║
 # ╚════════════════════════════════════════╝
 
 ################################################
@@ -32,7 +32,7 @@ set $menu wofi --show drun
 
 
 # ╔════════════════════════════════════════╗
-# ║							   Output                  ║
+# ║ Output                                 ║
 # ╚════════════════════════════════════════╝
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -46,7 +46,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 
 # ╔════════════════════════════════════════╗
-# ║								   Idle                  ║
+# ║ Idle                                   ║
 # ╚════════════════════════════════════════╝
 
 #############################################################################################
@@ -64,7 +64,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 
 # ╔════════════════════════════════════════╗
-# ║								 Input                   ║
+# ║ Input                                  ║
 # ╚════════════════════════════════════════╝
 
 #############################################################################################
@@ -87,7 +87,7 @@ xkb_layout it
 
 
 # ╔════════════════════════════════════════╗
-# ║						Key bindings                 ║
+# ║ Key bindings                           ║
 # ╚════════════════════════════════════════╝
 
 # Start a terminal
@@ -129,7 +129,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # ╔════════════════════════════════════════╗
-# ║						  Workspaces                 ║
+# ║ Workspaces                             ║
 # ╚════════════════════════════════════════╝
 
 # Switch to workspace
@@ -153,7 +153,7 @@ bindsym $mod+Shift+0 move container to workspace number 10, workspace number 10
 # We just use 1-10 as the default.
 
 # ╔════════════════════════════════════════╗
-# ║					   Layout & Resize             ║
+# ║ Layout & Resize                        ║
 # ╚════════════════════════════════════════╝
 
 # You can "split" the current object of your focus with
@@ -216,7 +216,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ╔════════════════════════════════════════╗
-# ║						   Utilities                 ║
+# ║ Utilities                              ║
 # ╚════════════════════════════════════════╝
 
 # Special keys to adjust volume via PulseAudio
@@ -229,9 +229,11 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym Print exec grim
+# Special key to select the current are for the screenshot
+bindsym $mod+Shift+4 exec grim -g "$(slurp)"
 
 # ╔════════════════════════════════════════╗
-# ║						   Status Bar                ║
+# ║ Status Bar                             ║
 # ╚════════════════════════════════════════╝
 
 ##################################################################
@@ -245,7 +247,7 @@ bar {
 }
 
 # ╔════════════════════════════════════════╗
-# ║						      Other                  ║
+# ║ Other                                  ║
 # ╚════════════════════════════════════════╝
 
 include /etc/sway/config.d/*
