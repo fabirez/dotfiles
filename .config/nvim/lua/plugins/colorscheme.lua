@@ -335,4 +335,70 @@ return {
 				-- vim.cmd 'colorscheme OceanicNextLight'
 		end,
 	},
+	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+	{ "olimorris/onedarkpro.nvim", priority = 1000}, -- vim.cmd("colorscheme onedark")
+	{ 'AlexvZyl/nordic.nvim',
+			lazy = false,
+			priority = 1000,
+			config = function()
+					require('nordic').load()
+			end
+	},
+	{ "savq/melange-nvim" },
+ {
+  'everviolet/nvim', name = 'evergarden',
+  priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+  opts = {
+    theme = {
+      variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
+      accent = 'green',
+    },
+    editor = {
+      transparent_background = false,
+      sign = { color = 'none' },
+      float = {
+        color = 'mantle',
+        solid_border = false,
+      },
+      completion = {
+        color = 'surface0',
+      },
+    },
+  }
+},
+
+{
+  "xero/miasma.nvim",
+  lazy = false,
+  priority = 1000,
+  -- config = function()
+  --   -- vim.cmd("colorscheme miasma")
+  -- end,
+},
+{ 
+  'olivercederborg/poimandres.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end,
+
+  -- optionally set the colorscheme within lazy config
+  -- init = function()
+  --   vim.cmd("colorscheme poimandres")
+  -- end
+},
+{
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+    -- your optional config goes here, see below.
+  end,
+},
 }

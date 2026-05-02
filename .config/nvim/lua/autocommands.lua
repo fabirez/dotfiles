@@ -12,3 +12,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+-- 			vim.cmd { cmd = 'lsp', args = { 'disable' } }
+--   end
+-- })

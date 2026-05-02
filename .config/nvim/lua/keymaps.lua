@@ -132,6 +132,10 @@ vim.keymap.set("n", "<leader>m", ":marks <CR>", opts)
 -- Format on Keybinds
 -- :h lsp.buf.format
 vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format({ async = false }) <CR>")
+vim.keymap.set("n", "<leader>bfp", ":!pnpm prettier format . --write")
+vim.keymap.set("n", "<leader>bfb", ":!pnpm biome format . --write")
+vim.keymap.set("n", "<leader>bfg", ":!pnpm fmt")
+
 
 
 -- Show the formatted markdown

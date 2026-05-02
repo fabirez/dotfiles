@@ -5,10 +5,7 @@ source "$DOT/.local/bin/log"
 SESSION_NAME=$1
 
 if [ -z "$SESSION_NAME" ]; then
-    SESSION_NAME=$(pwd | rg '.*/(.*)' -or '$1')
-  if [ -z "$SESSION_NAME" ]; then
-      error "Can't take the name of the session automatically, please specify it."
-  fi
+		SESSION_NAME=$(basename "$PWD")
 fi
 
 
@@ -19,8 +16,8 @@ tmux new-session -d -s "$SESSION_NAME"
 # -P : print
 # -F : what we want to print from the "#{...}" int his case only session_name see man tmux #ORAMTS
 # -s : session name
-# Tmux change some characted sometimes,  
-# e.x hello.world -> hello_world
+# Tmux change some characters,  
+# e.g hello.world -> hello_world
 
 # Here we just take the name of the session, that tmux give.
 TMUX_SESSION_NAME=$(tmux new-session -d -P -F "#{session_name}" -s "$SESSION_NAME")

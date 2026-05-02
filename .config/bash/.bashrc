@@ -50,7 +50,8 @@ export STARSHIP_CONFIG="$HOME/dotfiles/.config/starship/starship.toml"
 export NVIM_APPNAME="nvim"
 # Obsidian vault
 export VAULT="$HOME/notes/mynotes/obsidian-vault"
-
+# Theme
+export THEME="DARK"
 
 alias ls='eza -al --icons=always --sort=type'
 alias lt='eza -a --tree --level=1 --icons=always'
@@ -76,6 +77,9 @@ alias nvimp="~/downloads/nvim-linux-x86_64/bin/nvim"
 
 # nvim
 alias nvim="/opt/nvim-linux-x86_64/bin/nvim"
+
+# tmux for temp sessions
+alias txnt="tmux new -s $(uuidgen | rg ^.*?- -o)"
 
 # Initialize 
 eval "$(starship init bash)"

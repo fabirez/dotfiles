@@ -97,6 +97,10 @@ vim.o.softtabstop = 2
 vim.o.expandtab =  false
  -- enable smart indentation
 vim.o.smartindent = true
+
+
+-- background "dark" | "light" 
+vim.o.background = "dark"
 -------
 -- Custom
 ------
