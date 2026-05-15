@@ -1,18 +1,5 @@
 return {
-	"obsidian-nvim/obsidian.nvim",
-	version = "*", -- recommended, use latest release instead of latest commit
-	ft = "markdown",
-	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-	-- event = {
-	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-	--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-	--   -- refer to `:h file-pattern` for more examples
-	--   "BufReadPre path/to/my-vault/*.md",
-	--   "BufNewFile path/to/my-vault/*.md",
-	-- },
-	---@module 'obsidian'
-	---@type obsidian.config
-	opts = {
+require("obsidian").setup { 
 		ui = {
 			enable = false,
 		},
@@ -36,15 +23,6 @@ return {
 			-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
 			template = nil
 		},
-
-		--   -- Optional, for templates (see below).
-		--   templates = {
-		--     folder = "templates",
-		--     date_format = "%Y-%m-%d",
-		--     time_format = "%H:%M",
-		--     -- A map for custom variables, the key should be the variable and the value a function
-		--     substitutions = {},
-		--   },
 
 		-- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
 		-- levels defined by "vim.log.levels.*".
@@ -95,32 +73,5 @@ return {
       return string.format("![%s](%s)", path.name, path)
     end,
   },
-
-  -- -- Optional, define your own callbacks to further customize behavior.
-  -- callbacks = {
-  --   -- Runs at the end of `require("obsidian").setup()`.
-  --   ---@param client obsidian.Client
-  --   post_setup = function(client) end,
-  --
-  --   -- Runs anytime you enter the buffer for a note.
-  --   ---@param client obsidian.Client
-  --   ---@param note obsidian.Note
-  --   enter_note = function(client, note) end,
-  --
-  --   -- Runs anytime you leave the buffer for a note.
-  --   ---@param client obsidian.Client
-  --   ---@param note obsidian.Note
-  --   leave_note = function(client, note) end,
-  --
-  --   -- Runs right before writing the buffer for a note.
-  --   ---@param client obsidian.Client
-  --   ---@param note obsidian.Note
-  --   pre_write_note = function(client, note) end,
-  --
-  --   -- Runs anytime the workspace is set/changed.
-  --   ---@param client obsidian.Client
-  --   ---@param workspace obsidian.Workspace
-  --   post_set_workspace = function(client, workspace) end,
-  -- },
-
 }
+
