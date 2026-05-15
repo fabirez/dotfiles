@@ -1,35 +1,25 @@
 {
-  "custom/fedora_icon": {
+  "custom/archlinux_icon": {
     "tooltip": false,
     "format": "󰣇",
     "return-type": "text"
-  },
-  "sway/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "[01]",
-      "2": "[02]",
-      "3": "[03]",
-      "5": "[05]",
-      "8": "[08]",
-      "9": "[09]",
-      "10": "[10]"
-    },
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false
   },
   "custom/padding": {
     "tooltip": false,
     "format": " ",
     "return-type": "text"
   },
-  "custom/zeit": {
-    "format": "󰔶 ",
-    "exec": "$DOT/waybar/scripts/zeit-waybar-wofi.sh",
-    "on-click": "$DOT/waybar/scripts/zeit-waybar-wofi.sh click",
-    "interval": 10
-},
+ "custom/zeit": {
+   "format": "{icon} {text}",
+	 "tooltip":"true",
+	 "class": "active",
+   "return-type": "json",
+	 "exec": "/home/$USER/.config/waybar/scripts/zeit-waybar.sh",
+	 "format-icons": {
+      "default": "󰔶 "
+   },
+	"interval":10
+ },
   "pulseaudio": {
     "format": "{icon}",
     "format-bluetooth": "{icon}",

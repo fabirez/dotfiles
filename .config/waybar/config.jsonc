@@ -7,14 +7,14 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "modules-left": [
-    "custom/fedora_icon",
+    "custom/archlinux_icon",
     // "hyprland/workspaces"
-		"sway/workspaces"
+		// "sway/workspaces"
+    "custom/zeit",
+    "custom/padding"
   ],
   "modules-center": [],
   "modules-right": [
-    "custom/zeit",
-    "custom/padding",
     "pulseaudio",
     "custom/padding",
     "network",

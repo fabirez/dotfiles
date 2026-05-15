@@ -35,5 +35,20 @@
       "balanced": " ",
       "power-saver": " "
     }
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "[01]",
+      "2": "[02]",
+      "3": "[03]",
+      "5": "[05]",
+      "8": "[08]",
+      "9": "[09]",
+      "10": "[10]"
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false
   }
 }

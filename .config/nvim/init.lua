@@ -4,6 +4,7 @@ require("autocommands")
 require("usercommands")
 require("plugins.statusline")
 
+vim.lsp.enable('oxfmt-ls')
 -- vim.lsp.enable('ts-ls')
 vim.lsp.enable('astro-ls')
 vim.lsp.enable('css-ls')

@@ -34,7 +34,7 @@ tooltip {
   min-width: 24px;
 }
 
-#custom-fedora_icon {
+#custom-archlinux_icon {
   font-size: 2rem;
   color: @bg-blue;
   padding-right: 2rem;
@@ -78,4 +78,8 @@ tooltip {
 #custom-zeit {
   font-size: 18px;
   color: @bg-gray;
+}
+
+#custom-zeit.active{
+  color: @bg-red-accent;
 }
