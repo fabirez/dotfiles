@@ -136,7 +136,15 @@ vim.keymap.set("n", "<leader>bfp", ":!pnpm prettier format . --write")
 vim.keymap.set("n", "<leader>bfb", ":!pnpm biome format . --write")
 vim.keymap.set("n", "<leader>bfg", ":!pnpm fmt")
 
-
-
 -- Show the formatted markdown
 vim.keymap.set("n", "<leader>rm", ":RenderMarkdown enable<CR> :RenderMarkdown preview<CR>")
+-- Open the current backlink
+vim.keymap.set("n", "<leader>fl", ":Obsidian follow_link<CR>")
+
+
+
+
+
+
+
+

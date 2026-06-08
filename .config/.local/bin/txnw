@@ -26,6 +26,6 @@ tmux new-window -t "$TMUX_SESSION_NAME:9"
 tmux new-window -t "$TMUX_SESSION_NAME:8"
 tmux new-window -t "$TMUX_SESSION_NAME:7"
 
-tmux send-keys -t "${TMUX_SESSION_NAME}:9" "npm run dev" C-m
+tmux send-keys -t "${TMUX_SESSION_NAME}:9" "pnpm run dev" C-m
 
 tmux attach-session -t "$TMUX_SESSION_NAME:1"
