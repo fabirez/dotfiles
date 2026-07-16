@@ -13,6 +13,8 @@ tmux setenv SESSION "$SESSION_NAME"
 
 tmux new-session -d -s "$SESSION_NAME"
 
+echo "$SESSION_NAME"
+k
 # -P : print
 # -F : what we want to print from the "#{...}" int his case only session_name see man tmux #ORAMTS
 # -s : session name

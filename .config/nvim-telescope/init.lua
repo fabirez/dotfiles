@@ -265,7 +265,29 @@ do
   })
 end
 
+vim.api.nvim_create_autocmd({"BufWritePost"}, {
+	desc = 'Create a mark on save',
+	command = "mark c",
+})
+
+
+local buf = vim.api.nvim_create_buf(false, true)
+function CreateWindow()
+  vim.api.nvim_open_win(buf, false, {
+      relative = "editor",
+      width = 30,
+      height = 10,
+      row = 1,
+      col = vim.o.columns - 31,
+      border = "rounded",
+      style = "minimal",
+  })
+end
+
 local opts = { noremap = true, silent = true }
+
+-- Open file explorer
+vim.keymap.set("n", "<leader>wo", ":lua CreateWindow()<CR>", opts)
 
 -- Open file explorer
 vim.keymap.set("n", "<Tab>", ":Ex<CR>", opts)
@@ -492,9 +514,9 @@ do
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
   -- vim.cmd.colorscheme 'tokyonight-night'
-  vim.cmd.colorscheme 'lunaperche'
+  -- vim.cmd.colorscheme 'lunaperche'
   -- background "dark" | "light" 
-  vim.o.background = "light"
+  vim.o.background = "dark"
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
@@ -618,6 +640,7 @@ do
   vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
   vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
   -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
 vim.keymap.set('n', '<leader><leader>', function ()
 -- 0 is the current buffer
 -- if there is no .git file, just use the current directory as root 
@@ -625,6 +648,14 @@ local root = vim.fs.root(0, {'package.json','.obsidian','.git'}) or utils.buffer
 -- or vim.fs.expand('%:p:h:h') two folder up, instead of the current one
 builtin.find_files({cwd = root, hidden = true})
 end, { desc = '[S]earch [F]iles'})
+
+
+vim.keymap.set('n', '<leader>sgl', function ()
+-- 0 is the current buffer
+-- if there is no .git file, just use the current directory as root 
+local root = utils.buffer_dir()
+builtin.live_grep({cwd = root, hidden = true})
+end, { desc = '[S]earch by [G]rep in the current directory'})
 
   -- Add Telescope-based LSP pickers when an LSP attaches to a buffer.
   -- If you later switch picker plugins, this is where to update these mappings.
@@ -805,8 +836,8 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     ts_ls = {},
-    astro = {},
-    tailwindcss = {},
+    -- astro = {},
+    -- tailwindcss = {},
     stylua = {}, -- Used to format Lua code
 
     -- Special Lua Config, as recommended by neovim help docs

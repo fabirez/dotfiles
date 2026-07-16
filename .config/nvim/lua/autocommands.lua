@@ -18,3 +18,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- 			vim.cmd { cmd = 'lsp', args = { 'disable' } }
 --   end
 -- })
+--
+--
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+	pattern = {"*.c", "*.h"},
+	command = "echo 'Entering a C or C++ file'",
+})
+
+vim.api.nvim_create_autocmd({"BufWritePost"}, {
+	desc = 'Create a mark on save',
+	command = "mark c",
+})
+
