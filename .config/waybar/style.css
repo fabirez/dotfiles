@@ -83,3 +83,6 @@ tooltip {
 #custom-zeit.active{
   color: @bg-red-accent;
 }
+#custom-zeit.active #text{
+  color: @bg-azure;
+}

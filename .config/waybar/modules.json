@@ -10,15 +10,15 @@
     "return-type": "text"
   },
  "custom/zeit": {
-   "format": "{icon} {text}",
+	  "format": "{icon} {text}",
 	 "tooltip":"true",
 	 "class": "active",
    "return-type": "json",
 	 "exec": "/home/$USER/.config/waybar/scripts/zeit-waybar.sh",
 	 "format-icons": {
-      "default": "󰔶 "
-   },
-	"interval":10
+	     "default": "󰔶 "
+	  },
+	"interval":1
  },
   "pulseaudio": {
     "format": "{icon}",
