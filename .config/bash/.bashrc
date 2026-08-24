@@ -49,7 +49,7 @@ export STARSHIP_CONFIG="$HOME/dotfiles/.config/starship/starship.toml"
 # Nvim look for configuration files in $XDG_CONFIG_HOME/$NVIM_APPNAME
 export NVIM_APPNAME="nvim-telescope"
 # Obsidian vault
-export VAULT="$HOME/notes/mynotes/obsidian-vault"
+export VAULT="$HOME/notes/mynotes/logs-vault"
 # Theme
 export THEME="DARK"
 # [DOT]files
