@@ -1,13 +1,13 @@
-@define-color bg-white #ffffff;
-@define-color bg-black #24292e;
-@define-color bg-gray #636b74;
-@define-color bg-azure #9ecbff;
-@define-color bg-red-accent #fd9680;
-@define-color bg-red #f77685;
-@define-color bg-yellow-accent #e6fd80;
-@define-color bg-orange-accent #faaa75;
-@define-color bg-blue #79bfff;
+@define-color background #24292e;
+@define-color foreground #dcd7ba;
 
+@define-color popup-bg #223249;
+@define-color popup-fg #2D4F67;
+
+@define-color accent-fg #7E9CD8;
+@define-color accent-bg #24292e;
+
+/* Global Style */
 * {
   border: none;
   font-family: "JetBrainsMono Nerd Font";
@@ -19,54 +19,36 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.9);
-  margin-top: 8px;
+    background-color: @background;
+    color: @foreground;
 }
 
 tooltip {
-  background: @bg-black;
-  color: @bg-black;
+  background: @popup-bg;
+  color: @popup-fg;
   border-radius: 16px;
   padding: 16px;
 }
 
-#custom-padding {
-  min-width: 24px;
-}
-
-#custom-archlinux_icon {
-  font-size: 2rem;
-  color: @bg-blue;
-  padding-right: 2rem;
-  padding-left: 0.75rem;
-}
-
 #workspaces {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 16px; padding-right: 16px;
   border-radius: 0px 24px 24px 0px;
 }
 
 #workspaces button {
   font-size: 16px;
-  box-shadow: none;
-  text-shadow: none;
+  box-shadow: none; text-shadow: none;
   padding: 0px;
   min-width: 32px;
-  color: @bg-gray;
-  /* transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-  opacity: 0.9;
+  color: @foreground;
 }
 
-/* #workspaces button.current_output */
 #workspaces button.active,
 #workspaces button.visible
 {
-  color: @bg-azure;
-  /* transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-  opacity: 0.95;
+  background: @foreground;
+  color: @background;
 }
-
 
 #battery,
 #backlight,
@@ -77,12 +59,23 @@ tooltip {
 #custom-media_player,
 #custom-zeit {
   font-size: 18px;
-  color: @bg-gray;
+  color: @foreground;
 }
 
-#custom-zeit.active{
-  color: @bg-red-accent;
+/* Custom */
+#custom-archlinux_icon {
+  font-size: 2rem;
+  color: @foreground;
+  padding-right: 2rem; padding-left: 0.75rem;
 }
-#custom-zeit.active #text{
-  color: @bg-azure;
+
+#custom-zeit.active,
+#custom-misu.active
+{
+  color: @accent-fg;
+}
+
+/* Utility */
+#custom-padding {
+  min-width: 24px;
 }

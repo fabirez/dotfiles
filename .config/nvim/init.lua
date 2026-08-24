@@ -87,5 +87,6 @@ require("plugins.telescope")
 require("plugins.colorscheme")
 require("plugins.obsidian")
 require("plugins.treesitter")
+
 -- require("plugins.autoformat")
 

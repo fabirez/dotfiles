@@ -1,0 +1,19 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding={x=4,y=4}
+opacity=1
+# opacity=0
+# blur=true
+decorations = "None"
+
+[font]
+size=9
+
+[mouse]
+hide_when_typing=true
+
+[colors]
+[colors.primary]
+background="#000000"

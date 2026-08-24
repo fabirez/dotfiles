@@ -13,7 +13,17 @@ size=9
 
 [mouse]
 hide_when_typing=true
+#
+# [colors]
+# [colors.primary]
+# background="#000000"
 
-[colors]
-[colors.primary]
-background="#000000"
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/kanagawa_wave.toml"
+]

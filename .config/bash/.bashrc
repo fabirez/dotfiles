@@ -52,6 +52,8 @@ export NVIM_APPNAME="nvim-telescope"
 export VAULT="$HOME/notes/mynotes/obsidian-vault"
 # Theme
 export THEME="DARK"
+# [DOT]files
+export DOT="$HOME/dotfiles/.config"
 
 alias ls='eza -al --icons=always --sort=type'
 alias lt='eza -a --tree --level=1 --icons=always'
@@ -66,8 +68,8 @@ alias h="cat $HOME/.bash_history | fzf | sh"
 alias man="$LOCALBIN/manbat"
 alias installdoc="$DOT/.local/bin/docs/installdocs"
 
-# yt-dlp
-alias yt-dlp="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
+# yt-dlp-[l]ocal
+alias yt-dlp-l="python3 $HOME/dotfiles/.config/.local/bin/yt-dlp"
 
 # python
 alias py="python3"
@@ -81,8 +83,9 @@ alias nvim="/opt/nvim-linux-x86_64/bin/nvim"
 # tmux for temp sessions
 alias txnt="tmux new -s $(uuidgen | rg ^.*?- -o)"
 
+# alias pc="pnpm build && pnpm test && pnpm test:e2e && pnpm lint && pnpm check"
+alias pc="pnpm build && pnpm test && pnpm lint && pnpm check"
+
 # Initialize 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-
-

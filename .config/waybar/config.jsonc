@@ -11,6 +11,7 @@
     // "hyprland/workspaces"
 		// "sway/workspaces"
     "custom/zeit",
+    "custom/misu",
     "custom/padding"
   ],
   "modules-center": [],

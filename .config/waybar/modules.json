@@ -20,6 +20,12 @@
 	  },
 	"interval":1
  },
+ "custom/misu": {
+  "format": "{text}",
+  "return-type": "json",
+  "exec": "/home/$USER/.config/waybar/scripts/misu-waybar.sh",
+ "interval":1
+ },
   "pulseaudio": {
     "format": "{icon}",
     "format-bluetooth": "{icon}",

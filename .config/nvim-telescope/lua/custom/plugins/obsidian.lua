@@ -8,6 +8,10 @@ return {
 				name = "general",
 				path = "~/notes/mynotes/obsidian-vault",
 			},
+			{
+				name = "logs",
+				path = "~/notes/mynotes/logs-vault",
+			},
 		},
 		legacy_commands = false,
 
