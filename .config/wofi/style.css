@@ -1,0 +1,77 @@
+/* background */
+@define-color sumiInk0 	  #1F1F28;
+/* foreground */
+@define-color fujiWhite   #DCD7BA;
+/* border-muted foreground */
+@define-color sumiInk3    #363646;
+/* muted foreground */
+@define-color sumiInk4    #54546D;
+/* border-active foreground */
+@define-color crystalBlue #7E9CD8;
+
+* {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#window {
+    background-color: @sumiInk0;
+    border: 1px solid @crystalBlue;
+    color: @fujiWhite;
+}
+
+#input {
+    background-color: @sumiInk0;
+    border: 1px solid @sumiInk3;
+    border-radius: 4px;
+    color: @fujiWhite;
+    margin: 10px;
+    padding: 8px;
+}
+
+#input:focus{
+    border: 1px solid @crystalBlue;
+}
+
+#inner-box {
+    background-color: @sumiInk0;
+    margin: 0px;
+    padding: 5px;
+}
+
+#outer-box {
+    background-color: @sumiInk0;
+    margin: 5px;
+    padding: 5px;
+}
+
+#scroll {
+    margin: 0px;
+    padding: 5px;
+}
+
+#text {
+    color: @fujiWhite;
+    margin: 5px;
+}
+
+#entry {
+    border: 1px solid @sumiInk3;
+    color: @crystalBlue;
+    margin: 12px 0px;
+    padding: 6px;
+}
+
+#entry #text{
+    color: @sumiInk4;
+}
+
+#entry:selected {
+    background-color: transparent;
+    color: @crystalBlue;
+    border: 1px solid @crystalBlue;
+}
+
+#entry:selected #text {
+    color: @fujiWhite;
+}

@@ -50,6 +50,8 @@ export STARSHIP_CONFIG="$HOME/dotfiles/.config/starship/starship.toml"
 export NVIM_APPNAME="nvim-telescope"
 # Obsidian vault
 export VAULT="$HOME/notes/mynotes/logs-vault"
+# Obsidian General vault
+export GENERAL_VAULT="$HOME/notes/mynotes/obsidian-vault"
 # Theme
 export THEME="DARK"
 # [DOT]files

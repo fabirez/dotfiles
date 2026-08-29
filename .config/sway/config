@@ -137,7 +137,7 @@ bindsym $mod+z exec zeit end && notify-send "Ended tracking"
 # Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
+# bindsym $mod+3 workspace number 3
 bindsym $mod+5 workspace number 5
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
@@ -146,7 +146,7 @@ bindsym $mod+0 workspace number 10
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1,  workspace number 1 
 bindsym $mod+Shift+2 move container to workspace number 2,  workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3,  workspace number 3
+# bindsym $mod+Shift+3 move container to workspace number 3,  workspace number 3
 bindsym $mod+Shift+5 move container to workspace number 5,  workspace number 5
 bindsym $mod+Shift+8 move container to workspace number 8,  workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9,  workspace number 9
@@ -221,10 +221,6 @@ bindsym $mod+r mode "resize"
 default_border none 
 
 exec swaymsg border pixel 3
-
-# client.<class> <border> <background> <text>
-# client.focused   #ffffff   #ffffff    #ffffff
-# client.unfocused #000000   #000000    #000000
 
 # ╔════════════════════════════════════════╗
 # ║ Utilities                              ║
